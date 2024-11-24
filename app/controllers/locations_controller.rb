@@ -10,5 +10,3 @@ class LocationsController < ApplicationController
     render json: @locations
   end
 end
-class LocationsController < ApplicationController
-end
