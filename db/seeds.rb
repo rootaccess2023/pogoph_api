@@ -4,7 +4,7 @@ csv_file_path = Rails.root.join('db', 'pogo.csv')
 
 CSV.foreach(csv_file_path, headers: true) do |row|
 years_data = {
-    "2017" => row['is_2017'] == 'true',  # Convert the string "true" to actual boolean true
+    "2017" => row['is_2017'] == 'true',
     "2018" => row['is_2018'] == 'true',
     "2019" => row['is_2019'] == 'true',
     "2020" => row['is_2020'] == 'true',
@@ -21,7 +21,8 @@ years_data = {
     image: row['img_url'],
     description: row['description'],
     address: row['address'],
-    years: years_data
+    years: years_data,
+    region: row['region'],
   )
 end
 
